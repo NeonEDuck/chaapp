@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
     {% block title %}{% endblock %}
     {% load static %}
-    <link href="{% static "css/style.css" %}" rel="sytlesheet" type="text/css" />
+    <link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
 </head>
 <body bgcolor="#ffffff">
     <div id="warp">
@@ -18,13 +18,13 @@
                         <table width="92%" border="0" align="center" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td align="right">
-                                    <img src="{% static 'images/comments.png' %}" width="16" height="16" align="absmiddle" />
+                                    <img src="{% static 'images/comments.png' %}" width="16" height="16" align="absmiddle" alt=""/>
                                     <a href="/index/">瀏覽留言</a>
                                     {% block twomenu %}{% endblock %}
                                 </td>
                             </tr>
                         </table>
-                        <img src="{%static 'images/g_r9_c3.png' %}" alt width="600" height="20" border="0" />
+                        <img src="{%static 'images/g_r9_c3.png' %}" width="600" height="20" border="0" alt=""/>
 
                     </div>
                     {% block content %}{% endblock %}

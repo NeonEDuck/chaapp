@@ -11,7 +11,7 @@
                         {% if unit.bgender == 'm' %}
                             <img src="{% static 'images/boy.png' %}" alt="boy" width="72" height="63">
                         {% elif unit.bgender == 'f' %}
-                            <img src="{% static 'images/girl.png' %}" alt="boy" width="72" height="63">
+                            <img src="{% static 'images/girl.png' %}" alt="girl" width="72" height="63">
                         {% endif %}
                     </div>
                     <div class="contentDiv">
@@ -22,9 +22,9 @@
                             <p><b>版主回應</b>: {{ unit.bresponse }}</p>
                         </div>
                         <p class="editor">
-                            <img src="{% static 'images/user.png' %}" alt="user" width="16" height="16" align="absmiddle">
+                            <img src="{% static 'images/user.png' %}" alt="user:" width="16" height="16" align="absmiddle">
                             {{ unit.bname }}&nbsp;
-                            <img src="{% static 'images/date.png' %}" alt="date" width="16" height="16" align="absmiddle">
+                            <img src="{% static 'images/date.png' %}" alt="date:" width="16" height="16" align="absmiddle">
                             {{ unit.btime }}&nbsp;
                             <a href="mailto:{{ unit.bmail }}">
                                 <img src="{% static 'images/email.png' %}" alt="email" width="16" height="16" align="absmiddle">

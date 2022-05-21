@@ -20,14 +20,14 @@
                                     <img src="{% static 'images/girl.png' %}" width="72" height="63" alt="girl">
                                 {% endif %}
                                 <a href="/delete/{{ unit.id }}/">
-                                    <img src="{% static 'images/cross.png' %}" width="16" height="16" border="0" align="absmiddle" alt="cross">
+                                    <img src="{% static 'images/cross.png' %}" width="16" height="16" border="0" align="absmiddle" alt="cross:">
                                     刪除
                                 </a>
                             </div>
                             <div class="contentDiv">
                                 <p class="editor">
-                                    <img src="{% static 'images/user.png' %}" width="16" height="16" align="absmiddle" alt="user">{{ unit.bname }}&nbsp;
-                                    <img src="{% static 'images/date.png' %}" width="16" height="16" align="absmiddle" alt="date">{{ unit.btime }}&nbsp;
+                                    <img src="{% static 'images/user.png' %}" width="16" height="16" align="absmiddle" alt="user:">{{ unit.bname }}&nbsp;
+                                    <img src="{% static 'images/date.png' %}" width="16" height="16" align="absmiddle" alt="date:">{{ unit.btime }}&nbsp;
                                     <a href="mailto:{{ unit.bmail }}" target="_blank">
                                         <img src="{% static 'images/email.png' %}" width="16" height="16" align="absmiddle" alt="email">
                                     </a>&nbsp;
@@ -59,25 +59,25 @@
                 </tr>
             </table>
             <span class="functionDiv">
-                <img src="{% static 'images/g_r9_c3.png' %}" width="600" height="20" border="0" />
+                <img src="{% static 'images/g_r9_c3.png' %}" width="600" height="20" border="0" alt=""/>
             </span>
         </tr>
     {% empty %}
         <tr>
             <td background="{% static 'images/g_r3_c3.png' %}">
-                <div class="messageDiv"><img src="{% static 'images/exclamation.png' %}" width="16" height="16" align="absmiddle">目前沒有新的資料不要看好嗎，但還是歡迎您留言。</div></td>
+                <div class="messageDiv"><img src="{% static 'images/exclamation.png' %}" width="16" height="16" align="absmiddle" alt="">目前沒有新的資料不要看好嗎，但還是歡迎您留言。</div></td>
         </tr>
     {% endfor %}
     <tr>
         <td background="{% static 'images/g_r3_c3.png' %}">
             <div class="pagebutton">
             {% if currentpage > 1 %}
-                <a href="/index/prev/" title=" 上一頁 ">
-                <img src="{% static 'images/prevpage.png' %}" alt="上一頁" width="64" height="24" /></a>
+                <a href="/index/prev/" title="上一頁">
+                <img src="{% static 'images/prevpage.png' %}" alt="上一頁" width="64" height="24"/></a>
             {% endif %}
             {% if currentpage < totpage %}
                 <a href="/index/next/" title="下一頁">
-                <img src="{% static 'images/nextpage.png' %}" alt=" 下一頁 " width="64" height="24" /></a>
+                <img src="{% static 'images/nextpage.png' %}" alt=" 下一頁 " width="64" height="24"/></a>
             {% endif %}
             </div>
         </td>

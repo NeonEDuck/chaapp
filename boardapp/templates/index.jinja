@@ -4,8 +4,8 @@
 {% block title %}<title>網站留言板</title>{% endblock %}
 
 {% block twomenu %}
-<img src="{% static "images/comment.png" %}" width="16" height="16" align="absmiddle" /> <a href="/post/">我要留言</a>
-<img src="{% static "images/key.png" %}" width="16" height="16" align="absmiddle" /> <a href="/login/">版主管理</a>
+<img src="{% static "images/comment.png" %}" width="16" height="16" align="absmiddle" alt=""/> <a href="/post/">我要留言</a>
+<img src="{% static "images/key.png" %}" width="16" height="16" align="absmiddle" alt=""/> <a href="/login/">版主管理</a>
 {% endblock %}
 
 {% block content %}
@@ -19,9 +19,9 @@
                     <td valign="top" style="background:url({% static 'images/g_r4_c4.png' %}); background-repeat:no-repeat">
                         <div class="floorDiv">
                             {% if unit.bgender == "m" %}
-                                <img src="{% static 'images/boy.png' %}" width="72" height="63" />
+                                <img src="{% static 'images/boy.png' %}" width="72" height="63" alt=""/>
                             {% else %}
-                                <img src="{% static 'images/girl.png' %}" width="72" height="63" />
+                                <img src="{% static 'images/girl.png' %}" width="72" height="63" alt=""/>
                             {% endif %}
                         </div>
                         <div class="contentDiv">
@@ -33,16 +33,16 @@
                                 <p><strong>版主回應</strong>:{{unit.bresponse}}</p>
                             </div>
                             {% endif %}
-                            <p class="editor"><img src="{% static 'images/user.png' %}" width="16" height="16" align="absmiddle">{{unit.bname}}&nbsp;
-                                <img src="{% static "images/date.png" %}" width="16" height="16" align="absmiddle">{{unit.btime}}&nbsp;
+                            <p class="editor"><img src="{% static 'images/user.png' %}" width="16" height="16" align="absmiddle" alt="name:">{{unit.bname}}&nbsp;
+                                <img src="{% static "images/date.png" %}" width="16" height="16" align="absmiddle" alt="date:">{{unit.btime}}&nbsp;
                                 {% if unit.bmail != "" %}
                                     <a href="mailto:{{unit.bmail}}" target="_blank">
-                                    <img src="{% static 'images/email.png' %}}" width="16" height="16" border="0" align="absmiddle"></a>
+                                    <img src="{% static 'images/email.png' %}" width="16" height="16" border="0" align="absmiddle" alt="email"></a>
                                 {% endif %}
                                 &nbsp;
                                 {% if unit.bweb != "" %}
                                     <a href="{{unit.bweb}}" target="_blank">
-                                    <img src="{% static 'images/world.png' %}" width="16" height="16" border="0" align="absmiddle"</a>
+                                    <img src="{% static 'images/world.png' %}" width="16" height="16" border="0" align="absmiddle" alt="web"></a>
                                 {% endif %}
                             </p>
                         </div>
@@ -53,7 +53,7 @@
                 </tr>
             </table>
             <span class="functionDiv">
-                <img src="{% static 'images/g_r9_c3.png' %}" width="600" height="20" border="0" />
+                <img src="{% static 'images/g_r9_c3.png' %}" width="600" height="20" border="0" alt=""/>
             </span>
         </tr>
     {% empty %}
