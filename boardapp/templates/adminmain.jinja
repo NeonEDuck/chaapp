@@ -1,0 +1,87 @@
+{% extends 'baseadmin.jinja' %}
+{% load static %}
+
+{% block content %}
+        </td>
+    </tr>
+    {% for unit in boardunits %}
+        <tr>
+            <td background="{% static 'images/g_r3_c3.png' %}">
+                <table width="545" border="0" align="center" cellpadding="0" cellspacing="0" background="{% static "images/g_r5_c4.png" %}"
+                <tr>
+                    <td valign="top" style="background:url({% static 'images/g_r4_c4.png' %}); background-repeat:no-repeat">
+
+                        <form action="/adminmain/{{ unit.id }}/" method="POST" name="form1">
+                            {% csrf_token %}
+                            <div class="floorDiv">
+                                {% if unit.bgender == 'm' %}
+                                    <img src="{% static 'images/boy.png' %}" width="72" height="63" alt="boy">
+                                {% else %}
+                                    <img src="{% static 'images/girl.png' %}" width="72" height="63" alt="girl">
+                                {% endif %}
+                                <a href="/delete/{{ unit.id }}/">
+                                    <img src="{% static 'images/cross.png' %}" width="16" height="16" border="0" align="absmiddle" alt="cross">
+                                    刪除
+                                </a>
+                            </div>
+                            <div class="contentDiv">
+                                <p class="editor">
+                                    <img src="{% static 'images/user.png' %}" width="16" height="16" align="absmiddle" alt="user">{{ unit.bname }}&nbsp;
+                                    <img src="{% static 'images/date.png' %}" width="16" height="16" align="absmiddle" alt="date">{{ unit.btime }}&nbsp;
+                                    <a href="mailto:{{ unit.bmail }}" target="_blank">
+                                        <img src="{% static 'images/email.png' %}" width="16" height="16" align="absmiddle" alt="email">
+                                    </a>&nbsp;
+                                    <a href="{{ unit.bweb }}" target="_blank">
+                                        <img src="{% static 'images/world.png' %}" width="16" height="16" align="absmiddle" alt="web">
+                                    </a>&nbsp;
+                                </p>
+                            </div>
+                            <p class="title">
+                                留言標題
+                                <input type="text" name="boardsubject" id="boardsubject" style="margin-top: 5px;" value="{{ unit.bsubject }}" size="40">
+                            </p>
+                            <p class="title">
+                                留言內容
+                                <textarea name="boardcontent" id="boardcontent" cols="50" rows="5" style="margin-top: 5px;">{{ unit.bcontent }}</textarea>
+                            </p>
+                            <p class="title">
+                                版主回應
+                                <textarea name="boardresponse" id="boardresponse" cols="50" rows="5" style="margin-top: 5px;">{{ unit.bresponse }}</textarea>
+                            </p>
+                            <p align="center">
+                                <button type="submit" id="button">確定修改</button>
+                            </p>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img name="g_r7_c4" src="{% static 'images/g_r7_c4.png' %}" width="545" height="12" border="0" alt=""></td>
+                </tr>
+            </table>
+            <span class="functionDiv">
+                <img src="{% static 'images/g_r9_c3.png' %}" width="600" height="20" border="0" />
+            </span>
+        </tr>
+    {% empty %}
+        <tr>
+            <td background="{% static 'images/g_r3_c3.png' %}">
+                <div class="messageDiv"><img src="{% static 'images/exclamation.png' %}" width="16" height="16" align="absmiddle">目前沒有新的資料不要看好嗎，但還是歡迎您留言。</div></td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td background="{% static 'images/g_r3_c3.png' %}">
+            <div class="pagebutton">
+            {% if currentpage > 1 %}
+                <a href="/index/prev/" title=" 上一頁 ">
+                <img src="{% static 'images/prevpage.png' %}" alt="上一頁" width="64" height="24" /></a>
+            {% endif %}
+            {% if currentpage < totpage %}
+                <a href="/index/next/" title="下一頁">
+                <img src="{% static 'images/nextpage.png' %}" alt=" 下一頁 " width="64" height="24" /></a>
+            {% endif %}
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td background="{% static 'images/g_r3_c3.png' %}">
+{% endblock content %}

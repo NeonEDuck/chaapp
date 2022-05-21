@@ -1,0 +1,50 @@
+{% extends 'base.jinja' %}
+{% load static %}
+
+{% block content %}
+    <form action="." method="POST" name="form1">
+        {% csrf_token %}
+        <table width="100%" border="0" cellspacing="1" cellpadding="4">
+            <tr>
+                <th width="80" align="right" valign="baseline">標題</th>
+                <td valign="baseline">{{ postform.boardsubject }}</td>
+            </tr>
+            <tr>
+                <th align="right" valign="baseline">姓名</th>
+                <td valign="baseline">{{ postform.boardname }}</td>
+            </tr>
+            <tr>
+                <th align="right" valign="baseline">性別</th>
+                <td valign="baseline">
+                    <input type="radio" name="boardgender" id="boardgender" value="m" checked="checked">
+                    <img src="{% static 'images/boy.png' %}" width="72" height="63" alt="男生">
+                    <input type="radio" name="boardgender" id="boardgender2" value="f" checked="checked">
+                    <img src="{% static 'images/girl.png' %}" width="72" height="63" alt="女生">
+                </td>
+            </tr>
+            <tr>
+                <th align="right" valign="baseline">電子郵件</th>
+                <td valign="baseline">{{ postform.boardmail }}</td>
+            </tr>
+            <tr>
+                <th align="right" valign="baseline">個人網站</th>
+                <td valign="baseline">{{ postform.boardweb }}</td>
+            </tr>
+            <tr>
+                <th align="right" valign="baseline">內容</th>
+                <td valign="baseline">{{ postform.boardcontent }}</td>
+            </tr>
+            <tr>
+                <th align="right" valign="baseline">還是要驗證碼一下吧</th>
+                <td valign="baseline">{{ postform.captcha }}</td>
+            </tr>
+            <tr>
+                <th colspan="2" align="center" valign="baseline">
+                    <button id="button1" name="button1" type="submit">送出啊</button>
+                    <button id="button2" name="button2" type="reset">重設吧</button>
+                </th>
+            </tr>
+        </table>
+        <span style="color: red">{{ message }}</span>
+    </form>
+{% endblock %}

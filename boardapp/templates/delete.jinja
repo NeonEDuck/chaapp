@@ -1,0 +1,49 @@
+{% extends 'baseadmin.jinja' %}
+{% load static %}
+
+{% block content %}
+    <form action="/delete/{{ unit.id }}/del/" method="post" name="form1">
+        {% csrf_token %}
+        <table width="545" border="0" align="center" cellpadding="" cellspacing="0" background="{% static 'images/g_r5_c4.png' %}">
+            <tr>
+                <td valign="top" style="background: url({% static 'images/g_r4_c4' %}); background-repeat: no-repeat">
+                    <div class="floorDiv">
+                        {% if unit.bgender == 'm' %}
+                            <img src="{% static 'images/boy.png' %}" alt="boy" width="72" height="63">
+                        {% elif unit.bgender == 'f' %}
+                            <img src="{% static 'images/girl.png' %}" alt="boy" width="72" height="63">
+                        {% endif %}
+                    </div>
+                    <div class="contentDiv">
+                        <p class="title">{{ unit.bsubject }}</p>
+                        <p></p>
+                        <p>{{ unit.bcontent }}</p>
+                        <div class="responseDiv">
+                            <p><b>版主回應</b>: {{ unit.bresponse }}</p>
+                        </div>
+                        <p class="editor">
+                            <img src="{% static 'images/user.png' %}" alt="user" width="16" height="16" align="absmiddle">
+                            {{ unit.bname }}&nbsp;
+                            <img src="{% static 'images/date.png' %}" alt="date" width="16" height="16" align="absmiddle">
+                            {{ unit.btime }}&nbsp;
+                            <a href="mailto:{{ unit.bmail }}">
+                                <img src="{% static 'images/email.png' %}" alt="email" width="16" height="16" align="absmiddle">
+                            </a>&nbsp;
+                            <a href="{{ unit.bweb }}">
+                                <img src="{% static 'images/world.png' %}" alt="world" width="16" height="16" align="absmiddle">
+                            </a>&nbsp;
+                        </p>
+                        <div class="messageDiv">
+                            <img src="{% static 'images/cancel.png' %}" alt="cancel" width="16" height="16" align="absmiddle">
+                            是否確定刪除這筆留言?
+                        </div>
+                    </div>
+                    <p align="center">
+                        <button id="button" name="button" type="submit">確定刪除</button>
+                        <button id="button1" name="button1" onclick="window.history.back()">回上一頁</button>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock content %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <form action="." method="POST" name="form1">
+        {% csrf_token %}
+        <table border="0" align="center" cellpadding="" cellspacing="1">
+            <tr>
+                <th align="right" valign="baseline">帳號</th>
+                <td valign="baseline">
+                    <input type="text" name="username" id="username" style="width: 200px">
+                </td>
+            </tr>
+            <tr>
+                <th align="right" valign="baseline">密碼</th>
+                <td valign="baseline">
+                    <input type="password" name="passwd" id="passwd" style="width: 200px">
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2" align="center" valign="baseline">
+                    <button id="button1" name="button1" type="submit">送出</button>
+                    <button id="button2" name="button2" type="reset">重設</button>
+                </th>
+            </tr>
+        </table>
+        <span style="color: red">{{ message }}</span>
+    </form>
+</html>
